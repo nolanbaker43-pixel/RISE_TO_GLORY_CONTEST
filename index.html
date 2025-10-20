@@ -1,51 +1,93 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rise to Glory: CODM 2025 Tournament</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Rise to Glory 2025 — Registration</title>
+<meta name="description" content="Register for Rise to Glory: COD Mobile Christmas Tournament 2025" />
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1 class="neon">Rise to Glory: CODM 2025 Tournament</h1>
-      <p class="tagline">Battle One • Starts 24th December 2025</p>
-    </header>
+<canvas id="snow" aria-hidden="true"></canvas>
+<canvas id="confetti" aria-hidden="true"></canvas>
 
-    <section class="details">
-      <h2>Entry Fee</h2>
-      <p>Per Player: <strong>₵10</strong></p>
+<div class="wrap" role="main">
+  <header class="header">
+    <div class="logo" aria-hidden="true">Rise to Glory</div>
+    <div class="titles">
+      <div class="main-title">COD Mobile Christmas Tournament 2025</div>
+      <div class="sub">Team up. Fight hard. Battle begins in…</div>
+    </div>
+  </header>
 
-      <h2>Prizes</h2>
-      <ul>
-        <li>🥇 1st Place – ₵1,200</li>
-        <li>🥈 2nd Place – ₵500</li>
-        <li>🥉 3rd Place – ₵200</li>
-      </ul>
+  <div class="content">
+    <div class="left">
+      <div class="card">
+        <h3>Event Details</h3>
+        <p class="note"><strong>Entry Fee:</strong> ₵10 per player / ₵30 per team</p>
 
-      <h2>Payment Details</h2>
-      <p>Momo: <strong>0535656035</strong><br />
-      Name: <strong>Happy Avukpor</strong><br />
-      <em>Note: Please use your WhatsApp number as reference in case of refund issues.</em></p>
-    </section>
+        <div class="payment">
+          <h4>Payment Details</h4>
+          <p><strong>MoMo Name:</strong> Happy Avukpor</p>
+          <p><strong>Number:</strong> 0535656035</p>
+          <p class="note">Use your WhatsApp number as reference so refunds are possible.</p>
+        </div>
 
-    <section class="register">
-      <h2>Register Your Squad</h2>
-      <form id="registrationForm">
-        <input type="text" id="name" placeholder="Your Name" required />
-        <input type="text" id="team" placeholder="Team Name" required />
-        <input type="text" id="whatsapp" placeholder="WhatsApp Number" required />
-        <button type="submit">Submit Registration</button>
-      </form>
-      <p id="message"></p>
-    </section>
+        <p class="note"><strong>Gameplay:</strong> Custom rooms & lobbies</p>
 
-    <footer>
-      <p>🎄 Join the Battle. Rise. Conquer. Glory Awaits. 🎄</p>
-    </footer>
+        <div class="prizes" role="list" aria-label="Prizes">
+          <div class="prize"><div>1st — ₵1200</div></div>
+          <div class="prize"><div>2nd — ₵500</div></div>
+          <div class="prize"><div>3rd — ₵200</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h4>How to submit your screenshot (WhatsApp)</h4>
+        <ol class="note" style="padding-left:16px;line-height:1.6">
+          <li>Take a screenshot of your payment or in-game profile.</li>
+          <li>Send the image via WhatsApp to <strong>0535656035</strong>.</li>
+          <li>Include your <em>Full Name</em> and <em>Team Name</em> in the message.</li>
+          <li>Keep the original image until verification completes.</li>
+        </ol>
+      </div>
+    </div>
+
+    <aside class="right">
+      <div class="card count">
+        <div class="units" aria-hidden="true">
+          <div class="unit"><div id="days">00</div><div style="font-size:11px">DAYS</div></div>
+          <div class="unit"><div id="hours">00</div><div style="font-size:11px">HRS</div></div>
+          <div class="unit"><div id="minutes">00</div><div style="font-size:11px">MINS</div></div>
+          <div class="unit"><div id="seconds">00</div><div style="font-size:11px">SECS</div></div>
+        </div>
+        <div id="status" class="smalll">Battle begins soon</div>
+      </div>
+
+      <div class="card">
+        <h3>Register Now</h3>
+        <form id="regForm" novalidate>
+          <label for="name">Full Name *</label>
+          <input id="name" name="name" type="text" required placeholder="Your name or IGN">
+
+          <label for="phone">WhatsApp Number *</label>
+          <input id="phone" name="phone" type="tel" required placeholder="e.g. 055xxxxxxxx">
+
+          <label for="team">Team Name <small>(If you're participating as a team of three)</small></label>
+          <input id="team" name="team" type="text" placeholder="Team Alpha">
+
+          <div class="wa-note">📸 After submitting, send your screenshot via WhatsApp to <strong>0535656035</strong> with your full name and team name.</div>
+
+          <button type="submit" class="btn">Submit Registration</button>
+          <div id="success" class="success" role="status">✅ Registration submitted successfully! Get ready to Rise to Glory!</div>
+        </form>
+      </div>
+    </aside>
   </div>
 
-  <script src="script.js"></script>
+  <footer class="footer">🎅 Rise to Glory 2025 — Join the battle this festive season. • <a class="wa" href="https://chat.whatsapp.com/EO1tmDNZGx4ARDub2Qm9Ek" target="_blank" rel="noopener">Join our WhatsApp group</a></footer>
+</div>
+
+<script type="module" src="script.js"></script>
 </body>
 </html>
