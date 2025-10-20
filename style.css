@@ -1,0 +1,74 @@
+body {
+  background: radial-gradient(circle at top, #0a0a0a, #111);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+.neon {
+  font-size: 2rem;
+  color: gold;
+  text-shadow: 0 0 10px #f00, 0 0 20px #0f0, 0 0 30px gold;
+}
+
+.tagline {
+  color: #ff4444;
+  font-weight: 600;
+}
+
+.details {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
+}
+
+.register input {
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  background: gold;
+  color: #111;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ffcc00;
+}
+
+footer {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
