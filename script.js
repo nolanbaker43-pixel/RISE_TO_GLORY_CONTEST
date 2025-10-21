@@ -25,13 +25,9 @@ form.addEventListener('submit', async (e) => {
   if(!name || !phone){ alert('Please complete required fields.'); return; }
   try{
     await addDoc(collection(db,'registrations'), { name, phone, team, timestamp: serverTimestamp() });
-    // show persistent success message
     success.style.display = 'block';
-    // disable inputs to avoid duplicates
     form.querySelectorAll('input, button').forEach(el => el.disabled = true);
-    // play confetti for 4 seconds
     playConfetti(4000);
-    // scroll to top where logo/countdown are
     window.scrollTo({ top: 0, behavior: 'smooth' });
   } catch(err){
     console.error(err);
@@ -98,8 +94,8 @@ function playConfetti(duration = 3000){
 
 // Countdown (Oct 20 2025 → Dec 24 2025 battle begins)
 (function(){
-  const start = new Date(Date.UTC(2025,9,20,0,0,0)); // Oct 20 2025 UTC (month 9)
-  const battle = new Date(Date.UTC(2025,11,24,0,0,0)); // Dec 24 2025 UTC
+  const start = new Date(Date.UTC(2025,9,20,0,0,0));
+  const battle = new Date(Date.UTC(2025,11,24,0,0,0));
   const daysEl = document.getElementById('days');
   const hoursEl = document.getElementById('hours');
   const minsEl = document.getElementById('minutes');
@@ -109,7 +105,6 @@ function playConfetti(duration = 3000){
   function update(){
     const now = new Date();
     if(now < start){
-      // before registration opens: show time until registration opens
       const diff = start - now;
       const d = Math.floor(diff/(1000*60*60*24));
       const h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
@@ -118,7 +113,6 @@ function playConfetti(duration = 3000){
       daysEl.textContent = pad(d); hoursEl.textContent = pad(h); minsEl.textContent = pad(m); secsEl.textContent = pad(s);
       status.textContent = 'Registration opens soon';
     } else if(now >= start && now < battle){
-      // registration open, countdown to battle
       const diff = battle - now;
       const d = Math.floor(diff/(1000*60*60*24));
       const h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
@@ -127,7 +121,6 @@ function playConfetti(duration = 3000){
       daysEl.textContent = pad(d); hoursEl.textContent = pad(h); minsEl.textContent = pad(m); secsEl.textContent = pad(s);
       status.textContent = 'Battle begins in...';
     } else if(now >= battle && now < new Date(battle.getTime() + 6*24*60*60*1000)){
-      // during the 6-day event
       daysEl.textContent = '--'; hoursEl.textContent='--'; minsEl.textContent='--'; secsEl.textContent='--';
       status.textContent = '🔥 Event Ongoing! Let the battles begin.';
     } else {
